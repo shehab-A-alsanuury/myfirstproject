@@ -1,0 +1,286 @@
+/* Enhanced styles.css for Student Management System */
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #45a049;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --error-color: #f44336;
+  --success-color: #4CAF50;
+  --form-background: #fff;
+  --button-hover-color: #388E3C;
+  --border-radius: 8px; /* Updated for modern design */
+  --transition-speed: 0.3s; /* Consistent transition speed */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--transition-speed); /* Smooth background transition */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  border-radius: var(--border-radius); /* Added border radius */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem; /* Slightly larger header font */
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem; /* Increased gap for modern look */
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center; /* Centering titles for modern aesthetics */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px); /* Added subtle lift effect on hover */
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin: 0.5rem; 
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-4px); /* Enhanced lift effect */
+  box-shadow: 0 4px 8px var(--shadow-color); /* Deeper shadow on hover */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  border-radius: var(--border-radius); /* Added border radius */
+  overflow: hidden; /* Ensuring border radius is applied */
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Updated for a softer look */
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+form {
+  background-color: var(--form-background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  max-width: 400px;
+  margin: 0 auto;
+  transition: box-shadow var(--transition-speed); /* Smooth shadow transition */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] { /* Added email and number types */
+  width: 100%;
+  padding: 0.8rem; /* Increased padding for input fields */
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed); /* Smooth transitions */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.8rem; /* Increased padding */
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
+}
+
+.error, .success {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+
+.error {
+  background-color: #ffebee;
+  border-left: 4px solid var(--error-color);
+  color: var(--error-color);
+}
+
+.success {
+  background-color: #e8f5e9;
+  border-left: 4px solid var(--success-color);
+  color: var(--success-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+/* CSS for the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
